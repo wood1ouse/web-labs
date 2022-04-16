@@ -1,60 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
-
 * {
-	margin: 10px;
+	margin: 0;
 	padding: 0;
-	font-family: "Ultra", serif;
-	background-color: black;
-	color: whitesmoke;
+	box-sizing: border-box;
 }
 
 body {
-	overflow: hidden;
-	width: 100%;
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	justify-content: space-around;
+}
 
-	& > div {
-		width: 100vw;
+.TEXT.BLUE,
+.TEXT.PINK,
+.TEXT.YELLOW,
+.IMG.GREEN,
+.IMG.YELLOW {
+	font-size: 15px;
+	text-align: center;
+}
+
+// FLOAT VARIANT //
+
+// .container {
+// 	width: 75vh;
+// 	height: 75vh;
+// 	font-size: 0;
+// }
+
+// .TEXT.BLUE, .TEXT.YELLOW {
+// 	height: 10%;
+// }
+
+// .TEXT.PINK, .IMG.GREEN, .IMG.YELLOW {
+// 	width: 33.33%;
+// 	height: 80%;
+// }
+
+// .TEXT {
+// 	&.BLUE {
+// 		background-color: aquamarine;
+// 	}
+
+// 	&.PINK {
+// 		float: right;
+// 		background-color: purple;
+// 	}
+
+// 	&.YELLOW {
+// 		background-color: bisque;
+// 	}
+// }
+
+// .IMG {
+// 	&.GREEN {
+// 		float: left;
+// 		background-color: greenyellow;
+// 	}
+
+// 	&.YELLOW {
+// 		display: inline-block;
+// 		background-color: yellow;
+// 	}
+
+// }
+
+
+// FLEX VARIANT //
+
+.container {
+	&.outer {
 		display: flex;
-		justify-content: space-evenly;
-
-		& > div {
-			display: flex;
-			flex-direction: column;
-
-			& > h2 {
-				text-align: center;
-			}
-
-			& > p {
-				line-height: 2;
-			}
-		}
+		flex-direction: column;
+		width: 75vh;
+		height: 75vh;
+	}
+	&.inner {
+		flex: calc(4/5);
+		display: flex;
 	}
 }
 
-h2 {
-	font-weight: 100;
-	color: #e08f0c;
-	text-shadow: #d30200 1px 1px 0, #d30200 2px 2px 0, #d30200 3px 3px 0;
+.IMG.GREEN, .IMG.YELLOW, .TEXT.PINK {
+	flex: calc(1/3);
 }
 
-img {
-	transition: all 0.3s ease-in;
-	width: 510px;
-	height: 350px;
-	border-radius: 3px;
+.TEXT.BLUE, .TEXT.YELLOW {
+	flex: calc(1/10);
 }
 
-img:hover {
-	filter: sepia(100%);
+.TEXT {
+	&.BLUE {
+		background-color: aquamarine;
+	}
+	&.PINK {
+		background-color: purple;
+	}
+	&.YELLOW {
+		background-color: bisque;
+	}
 }
 
-ul,
-ol {
-	color: #e08f0c;
+.IMG {
+	&.GREEN {
+		background-color: greenyellow;
+	}
+	&.YELLOW {
+		background-color: yellow;
+	}
 }
