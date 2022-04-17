@@ -26,15 +26,24 @@
 
         <ol>Favourite Films:
             <li>"Fight Club" (1999)</li>
-            <li>"White Sun of the Desert" (1970)</li>
-            <li>"Lion King" (1994)</li>
+            <li id="clickable">"White Sun of the Desert" (1970)</li>
+            <li class="clickableQS">"Lion King" (1994)</li>
         </ol>
     </div>
 
     <div>
-        <a href="https://en.wikipedia.org/wiki/Kyiv">
-            <img src="assets/kyiv.jpg">
-        </a>
+        <div>
+            <a href="https://en.wikipedia.org/wiki/Kyiv">
+                <img src="assets/kyiv.jpg">
+            </a>
+        <input name="picField" style="visibility: hidden;" type="file" id="picField">
+        <label class="picField" for="picField">ADD</label>
+        <button class="delete">Delete</button>
+        <button class="scaleUp">+</button>
+        <button class="scaleDown">-</button>
+    </div>
+    
+
 
         <div>
             <h2>Kyiv</h2>
@@ -57,6 +66,11 @@
     </div>
 
 
+    <div class="image-container"></div>
+
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
