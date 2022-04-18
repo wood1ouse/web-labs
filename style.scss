@@ -1,60 +1,93 @@
-@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
-
 * {
-	margin: 10px;
+	margin: 0;
 	padding: 0;
-	font-family: "Ultra", serif;
-	background-color: black;
-	color: whitesmoke;
+	box-sizing: border-box;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
-	overflow: hidden;
-	width: 100%;
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-evenly;
 	align-items: center;
-	justify-content: space-around;
+}
 
-	& > div {
-		width: 100vw;
-		display: flex;
-		justify-content: space-evenly;
+.input-container {
+	font-size: 24px;
+	padding: 5px;
+	width: 30vh;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 
-		& > div {
-			display: flex;
-			flex-direction: column;
+	& input,
+	& button {
+		padding: 5px;
+		font-size: 24px;
+		border-radius: 10px;
+	}
 
-			& > h2 {
-				text-align: center;
-			}
+	& input:focus {
+		outline: none;
+	}
 
-			& > p {
-				line-height: 2;
-			}
+	& input {
+		transition: border .5s;
+
+		&.invalid {
+			border: 2px solid red;
+		}
+
+		&.valid {
+			border: 2px solid #46CF76;
+		}
+	}
+
+	& button {
+		margin: 20px 0 20px 0;
+		cursor: pointer;
+		border: none;
+		color: #fff;
+		padding: 5px;
+		transition: background-color .3s linear;
+		background-color: #82DE94;
+
+		&:hover {
+			background-color: #46CF76;
 		}
 	}
 }
 
-h2 {
-	font-weight: 100;
-	color: #e08f0c;
-	text-shadow: #d30200 1px 1px 0, #d30200 2px 2px 0, #d30200 3px 3px 0;
+.output-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&>* {
+		margin: 10px;
+	}
 }
 
-img {
-	transition: all 0.3s ease-in;
-	width: 510px;
-	height: 350px;
-	border-radius: 3px;
+// // // // // // // //
+
+.table {
+	display: grid;
+	& > * {
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1px;
+		border: 1px solid #000;
+		padding: 10px;
+	}
+
+	&-container {
+		& input {
+			width: 100%;
+			margin-bottom: 10%;
+		}
+	}
 }
 
-img:hover {
-	filter: sepia(100%);
-}
-
-ul,
-ol {
-	color: #e08f0c;
-}
